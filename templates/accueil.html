@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS E-commerce - Accueil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 60px 0;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .card {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .links a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .api-list {
+            list-style: none;
+        }
+        .api-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .api-list li:last-child {
+            border-bottom: none;
+        }
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .method {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .get { background: #61affe; color: white; }
+        .post { background: #49cc90; color: white; }
+        .put { background: #fca130; color: white; }
+        .delete { background: #f93e3e; color: white; }
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            opacity: 0.8;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 SaaS E-commerce</h1>
+            <p>Plateforme de commerce électronique multi-boutiques avec paiement Mobile Money</p>
+        </div>
+
+        <div class="card">
+            <h2>🔗 Accès Rapide</h2>
+            <div class="links">
+                <a href="/admin/">🔐 Admin Django</a>
+                <a href="/api/auth/connexion/">📡 API Auth</a>
+                <a href="/api/dashboard/vendeur/">📊 Dashboard Vendeur</a>
+                <a href="/api/boutiques/">🏪 Boutiques</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⚡ Fonctionnalités</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🏪</div>
+                    <h3>Multi-Boutiques</h3>
+                    <p>Chaque vendeur a sa propre boutique</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Mobile Money</h3>
+                    <p>Orange, Wave, MTN, Moov</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📦</div>
+                    <h3>Produits</h3>
+                    <p>Gestion complète des produits</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dashboard</h3>
+                    <p>Statistiques en temps réel</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📡 Endpoints API Disponibles</h2>
+            <ul class="api-list">
+                <li>
+                    <span class="method post">POST</span>
+                    <code>/api/auth/inscription/</code> - Inscription vendeur
+                </li>
+                <li>
+                    <span class="method post">POST</span>
+                    <code>/api/auth/connexion/</code> - Connexion
+                </li>
+                <li>
+                    <span class="method get">GET</span>
+                    <code>/api/dashboard/vendeur/</code> - Dashboard Vendeur
+                </li>
+                <li>
+                    <span class="method get">GET</span>
+                    <code>/api/dashboard/admin/</code> - Dashboard Admin
+                </li>
+                <li>
+                    <span class="method get">GET</span>
+                    <code>/api/boutiques/</code> - Liste boutiques
+                </li>
+                <li>
+                    <span class="method get">GET</span>
+                    <code>/api/produits/</code> - Liste produits
+                </li>
+                <li>
+                    <span class="method get">GET</span>
+                    <code>/api/commandes/</code> - Liste commandes
+                </li>
+                <li>
+                    <span class="method post">POST</span>
+                    <code>/api/paiements/initier/</code> - Initier paiement
+                </li>
+                <li>
+                    <span class="method get">GET</span>
+                    <code>/api/abonnements/</code> - Abonnements
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 SaaS E-commerce Platform - Tous droits réservés</p>
+            <p>Développé avec Django & Python 🐍</p>
+        </div>
+    </div>
+</body>
+</html>

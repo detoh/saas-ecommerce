@@ -1,0 +1,25 @@
+1 Utiliser l'environnement virtuel
+- venv\Scripts\activate
+1 Gestion des migrations
+--python manage.py makemigrations paiements
+- python manage.py migrate
+2 Lancer le server
+- python manage.py runserver
+
+# 2. Redémarrez le serveur React
+# (Ctrl + C dans le terminal React, puis :)
+npm run dev
+ Shortcuts pour vite
+  press r + enter to restart the server
+  press u + enter to show server url
+  press o + enter to open in browser
+  press c + enter to clear console
+  press q + enter to quit
+
+type nul > src\pages\Dashboard.jsx
+
+# Exemple pour Categories.jsx
+type nul > src\pages\Categories.jsx
+
+# Exemple pour Storefront.jsx
+type nul > src\pages\Storefront.jsx
